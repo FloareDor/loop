@@ -1,4 +1,4 @@
-# Tariff-to-Code Engine
+# Tariff-to-Code
 
 Turns carrier rate sheets into executable pricing logic.
 
