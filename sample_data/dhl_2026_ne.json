@@ -1,0 +1,33 @@
+{
+  "contract_id": "DHL_2026_NE",
+  "carrier": "DHL",
+  "effective_date": "2026-01-01",
+  "rules": [
+    {
+      "rule_type": "base_rate",
+      "conditions": [
+        { "field": "zone", "operator": "==", "value": 5 }
+      ],
+      "action": { "type": "set_price", "value": 450.00, "currency": "USD" }
+    },
+    {
+      "rule_type": "surcharge",
+      "conditions": [
+        { "field": "weight", "operator": ">", "value": 2000 }
+      ],
+      "action": { "type": "add_formula", "formula": "0.15 * (weight - 2000)" }
+    },
+    {
+      "rule_type": "discount",
+      "conditions": [
+        { "field": "service_type", "operator": "==", "value": "express" }
+      ],
+      "action": { "type": "multiply_rate", "factor": 1.25 }
+    },
+    {
+      "rule_type": "min_charge",
+      "conditions": [],
+      "action": { "type": "add_flat", "value": 15.00, "currency": "USD" }
+    }
+  ]
+}

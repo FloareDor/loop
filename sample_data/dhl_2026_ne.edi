@@ -1,0 +1,18 @@
+ISA*00*          *00*          *ZZ*DHL            *ZZ*SHIPPER        *260101*1200*U*00401*000000001*0*P*>~
+GS*SC*DHL*SHIPPER*20260101*1200*1*X*004010~
+ST*832*0001~
+BCT*RC*DHL_2026_NE~
+LIN*1*BR~
+CND*zone*==*5~
+ACT*set_price*450.00*USD~
+LIN*2*SC~
+CND*weight*>*2000~
+ACT*add_formula*0.15 * (weight - 2000)~
+LIN*3*DC~
+CND*service_type*==*express~
+ACT*multiply_rate*1.25~
+LIN*4*MC~
+ACT*add_flat*15.00*USD~
+SE*12*0001~
+GE*1*1~
+IEA*1*000000001~
